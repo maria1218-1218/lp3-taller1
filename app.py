@@ -5,8 +5,10 @@ import os
 from flask import Flask
 from flask_restful import Api
 from models import db
+from models.video import VideoModel
 from resources.video import Video
 from config import config
+from resources.video import Video, VideoList
 
 def create_app(config_name='default'):
     """
@@ -21,17 +23,17 @@ def create_app(config_name='default'):
     # TODO: Crear el objeto 'app'
     app = Flask(__name__)
 
-    
     # Cargar configuración
     app.config.from_object(config[config_name])
     
+
     # Inicializar extensiones
     db.init_app(app)
     api = Api(app)
     
     # Registrar rutas
     api.add_resource(Video, "/api/videos/<int:video_id>")
-    
+    api.add_resource(VideoList, "/api/videos")
     return app
 
 if __name__ == "__main__":
@@ -40,6 +42,8 @@ if __name__ == "__main__":
     
     # Crear aplicación
     app = create_app(config_name)
+
+    from models.video import VideoModel
     
     # Crear todas las tablas en la base de datos
     with app.app_context():
