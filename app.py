@@ -9,6 +9,7 @@ from models.video import VideoModel
 from resources.video import Video
 from config import config
 from resources.video import Video, VideoList
+from flasgger import Swagger
 
 def create_app(config_name='default'):
     """
@@ -26,6 +27,7 @@ def create_app(config_name='default'):
     # Cargar configuración
     app.config.from_object(config[config_name])
     
+    Swagger(app)
 
     # Inicializar extensiones
     db.init_app(app)
