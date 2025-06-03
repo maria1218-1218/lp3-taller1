@@ -126,9 +126,9 @@ DELETE /api/videos/{id}
 ```
 
 ## Ver la documentación
-```
+
 http://localhost:5000/apidocs
-```
+
 
 ## Desarrollo del Taller
 
