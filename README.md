@@ -43,7 +43,7 @@ lp3-taller1
 
 1. Clonar el repositorio:
    ```
-   git clone https://github.com/UR-CC/lp3-taller1.git
+   git clone https://github.com/maria1218-1218/lp3-taller1
    cd lp3-taller1
    ```
 
@@ -75,6 +75,7 @@ lp3-taller1
 
 ### Obtener un video
 
+http://localhost:5000/api/videos/{id}
 ```
 GET /api/videos/{id}
 ```
@@ -122,6 +123,11 @@ Cuerpo de la solicitud (campos opcionales):
 
 ```
 DELETE /api/videos/{id}
+```
+
+## Ver la documentación
+```
+http://localhost:5000/apidocs
 ```
 
 ## Desarrollo del Taller
